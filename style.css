@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.apple {
+    animation: apple .1s ease-in infinite alternate;
+}
+
+.throw:nth-child(even) {
+    animation: appleThrow 3s ease-in 2s infinite;
+    transform-origin: center;
+
+
+}
+.throw:nth-child(odd) {
+    animation: appleThrow 3s ease-in 1s infinite;
+    transform-origin: center;
+
+
+}
+
+#stem {
+    animation: stem 1s ease-in infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes apple {
+    from {
+        transform: translateX(0) scale(1);
+    }
+
+    to {
+        transform: translateX(1%)scale(1.03);
+    }
+}
+
+@keyframes appleThrow {
+    from {
+        transform: translateY(0) rotateZ(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100%) rotateZ(40deg);
+        opacity: 0;
+    }
+}
+
+@keyframes stem {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(1.02)
+    }
+}
